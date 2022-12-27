@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { useState, useEffect } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { useDispatch, useSelector } from 'react-redux';
-import { generatePicture } from "./service";
+import { generateImage, generatePicture } from "./service";
 
 
 export default function Dalle(){
@@ -19,7 +19,7 @@ export default function Dalle(){
   );
 
   const handleGenerateImage = () => {
-    dispatch(generatePicture(prompt));
+    dispatch(generateImage(prompt));
   };
 
   useEffect(() => {
@@ -45,8 +45,9 @@ export default function Dalle(){
 
           
           {imageUrl.length > 0 ? (
-              
-            <img className="result-image" src={imageUrl} alt="result"  />
+         
+              null
+            // <img className="result-image" src={imageUrl} alt="result"  />
           ) : (
             <><textarea
             className="app-input"

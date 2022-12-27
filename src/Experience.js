@@ -30,6 +30,13 @@ export default function Experience() {
   const texture = new THREE.TextureLoader().load(imageUrl);
   console.log(texture)
 
+  // Set the texture properties
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+
+
 
   useEffect(() => {
     matcapTexture.encoding = THREE.sRGBEncoding;
@@ -38,7 +45,7 @@ export default function Experience() {
     material.matcap = matcapTexture;
     material.needsUpdate = true;  
 
-  }, [imageUrl]);
+  }, []);
 
   return (
     <>
