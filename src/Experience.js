@@ -71,7 +71,7 @@ export default function Experience() {
         </Text3D>
 
         {texture ? (<mesh>
-          <planeGeometry args={[7, 3.5]} />
+          <planeGeometry args={[5, 5]} />
           <meshBasicMaterial color='white' map={texture ? texture : new THREE.Texture()} />
         </mesh>) : null}
       </Center>
