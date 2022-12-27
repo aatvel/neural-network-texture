@@ -59,7 +59,7 @@ export  function generateImage(promt) {
     method: 'POST',
     headers: {      
       'Content-Type': 'application/json',
-      'Authorization': `Bearer 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`,
+      'Authorization': `Bearer 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`,
       'Content-Type': 'application/json',
      
     },
