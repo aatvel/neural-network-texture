@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { useState, useEffect } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { useDispatch, useSelector } from 'react-redux';
-import { generateImage, generatePicture } from "./service";
+import { downloadImage, generateImage, generatePicture, main } from "./service";
 
 
 export default function Dalle(){
@@ -19,7 +19,8 @@ export default function Dalle(){
   );
 
   const handleGenerateImage = () => {
-    dispatch(generateImage(prompt));
+    // dispatch(downloadImage(prompt));
+    setLoading(setTimeout(() => {}, 50000))
   };
 
   useEffect(() => {
