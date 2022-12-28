@@ -7,7 +7,7 @@ import { Configuration, OpenAIApi } from "openai";
 const IMAGE_GENERATED = "IMAGE_GENERATED";
 
 const initialState = {
-  imageUrl: "",
+  imageUrl: ""
 };
 
 function reducer(state = initialState, action) {
@@ -15,7 +15,7 @@ function reducer(state = initialState, action) {
     case IMAGE_GENERATED:
       return {
         ...state,
-        imageUrl: action.imageUrl,
+        imageUrl: action.imageUrl
       };
     default:
       return state;

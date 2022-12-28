@@ -14,12 +14,11 @@ import * as THREE from "three";
 const torusGeometry = new THREE.TorusGeometry(1, 0.6, 16, 32);
 const material = new THREE.MeshMatcapMaterial();
 
-export default function Experience() {
+export default function Donuts() {
 
   const donuts = useRef([]);
   const matcapTexture = new THREE.TextureLoader().load('7B5254_E9DCC7_B19986_C8AC91-256px.png')
-  // console.log(donutTexture)
-  // const [matcapTexture] = useMatcapTexture("7B5254_E9DCC7_B19986_C8AC91", 256);
+
   useFrame((state, delta) => {
     for (const donut of donuts.current) {
       donut.rotation.y += delta * 0.2;

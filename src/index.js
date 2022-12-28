@@ -1,10 +1,11 @@
 import "./style.css";
 import ReactDOM from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
-import Experience from "./Experience.js";
+import Donuts from "./Donuts";
 import { Provider } from "react-redux";
 import { store } from "./service";
-import Dalle from "./Dalle";
+import Texture from "./Texture";
+
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
@@ -18,8 +19,8 @@ root.render(
         position: [4, -2, 8],
       }}
     >
-      <Experience />
+      <Donuts />
     </Canvas>
-    <Dalle />
+    <Texture />
   </Provider>
 );

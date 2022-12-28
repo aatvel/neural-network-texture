@@ -1,26 +1,26 @@
-import "./interface.css";
+import "./style.css";
 import * as THREE from 'three';
 import { useState, useEffect } from "react";
-import { Configuration, OpenAIApi } from "openai";
 import { useDispatch, useSelector } from 'react-redux';
-import { downloadImage, generateImage, generatePicture, main } from "./service";
+import { downloadImage } from "./service";
 
 
-export default function Dalle(){
+export default function Texture(){
   const dispatch = useDispatch();
   const [prompt, setPrompt] = useState("");
-  const [texture, setTexture] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const textureLoader = new THREE.TextureLoader();
 
   const [placeholder, setPlaceholder] = useState(
     "Search Bears with Paint Brushes the Starry Night, painted by Vincent Van Gogh.."
   );
 
   const handleGenerateImage = () => {
-    // dispatch(downloadImage(prompt));
-    setLoading(setTimeout(() => {}, 50000))
+    setLoading(true);
+    dispatch(downloadImage(prompt));
+    setTimeout(() => {
+      setLoading(false);
+    }, 51000); 
   };
 
   useEffect(() => {
@@ -29,12 +29,13 @@ export default function Dalle(){
 
   const imageUrl = useSelector((state) => state.imageUrl);
  
+ 
   return (
     <>
     <div className="app-main">
       {loading ? (
         <>
-          <h2>Generating..Please Wait..</h2>
+          <h2>Generating.. Please Wait..</h2>
           <div className="lds-ripple">
             <div></div>
             <div></div>
@@ -42,15 +43,13 @@ export default function Dalle(){
         </>
       ) : (
         <>
-          <h2>Generate an Image using Open AI API</h2>
-
-          
-          {imageUrl.length > 0 ? (
-         
-              null
-            // <img className="result-image" src={imageUrl} alt="result"  />
-          ) : (
-            <><textarea
+                  
+          {imageUrl.length > 0 ? (         
+            null
+          ) : (            
+            <>
+            <h2>Generate an Image using Open AI API</h2>  
+            <textarea
             className="app-input"
             placeholder={placeholder}
             onChange={(e) => setPrompt(e.target.value)}
