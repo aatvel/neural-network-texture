@@ -37,7 +37,7 @@ export default function Texture() {
         </>
       ) : (
         <>
-          {imageUrl.length > 0 ? null : (
+     
             <>
               <textarea
                 className="app-input"
@@ -50,7 +50,7 @@ export default function Texture() {
                 Generate an Image
               </button>
             </>
-          )}
+          
         </>
       )}
     </div>
