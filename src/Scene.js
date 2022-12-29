@@ -54,7 +54,7 @@ export default function Scene() {
 
       <Environment preset="forest" />
 
-      <Center position={[0, 2.2, 0]}>
+      <Center position={[0, 1.5, 0]}>
         <Suspense>
           <Float
             rotationIntensity={0.5}
