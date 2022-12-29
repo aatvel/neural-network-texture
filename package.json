@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dimforge/rapier3d": "^0.10.0",
     "@grpc/grpc-js": "^1.8.0",
     "@improbable-eng/grpc-web": "^0.15.0",
     "@react-three/drei": "^9.32.3",

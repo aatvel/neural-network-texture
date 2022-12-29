@@ -7,7 +7,7 @@ import { Configuration, OpenAIApi } from "openai";
 const IMAGE_GENERATED = "IMAGE_GENERATED";
 
 const initialState = {
-  imageUrl: ""
+  imageUrl: "",
 };
 
 function reducer(state = initialState, action) {
@@ -15,7 +15,7 @@ function reducer(state = initialState, action) {
     case IMAGE_GENERATED:
       return {
         ...state,
-        imageUrl: action.imageUrl
+        imageUrl: action.imageUrl,
       };
     default:
       return state;
@@ -24,11 +24,8 @@ function reducer(state = initialState, action) {
 
 export const store = createStore(reducer, applyMiddleware(thunk));
 
-
-
 export function downloadImage(prompt) {
   return async (dispatch) => {
-
     const url = "http://178.124.214.161:7777/render ";
     const description = { prompt: JSON.stringify(prompt), steps: 5 };
 
@@ -45,8 +42,8 @@ export function downloadImage(prompt) {
 
     // Make the second request
     const imageResponse = await fetch(`${urlDownload}${data}`);
-    console.log(imageResponse);
+    // console.log(imageResponse);
 
-    dispatch({ type: IMAGE_GENERATED, imageUrl: imageResponse.url });    
+    dispatch({ type: IMAGE_GENERATED, imageUrl: imageResponse.url });
   };
 }
