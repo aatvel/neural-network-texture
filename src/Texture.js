@@ -18,7 +18,7 @@ export default function Texture() {
     dispatch(downloadImage(prompt));
     setTimeout(() => {
       setLoading(false);
-    }, 51000);
+    }, 52000);
   };
 
   useEffect(() => {}, []);
