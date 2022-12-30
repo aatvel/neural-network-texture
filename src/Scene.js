@@ -17,41 +17,15 @@ import Junior from "./Junior";
 import { Fog } from "three";
 import { Model } from "./Liquid";
 
-const torusGeometry = new THREE.TorusGeometry(1, 0.6, 16, 32);
 const material = new THREE.MeshMatcapMaterial();
 
 export default function Scene() {
-  const donuts = useRef([]);
-  const matcapTexture = new THREE.TextureLoader().load(
-    "7B5254_E9DCC7_B19986_C8AC91-256px.png"
-  );
-
   const floorTextute = new THREE.TextureLoader().load("floor.png");
-
-  useFrame((state, delta) => {
-    for (const donut of donuts.current) {
-      donut.rotation.y += delta * 0.2;
-    }
-  });
-
-  const imageUrl = useSelector((state) => state.imageUrl);
-  const texture = new THREE.TextureLoader().load(imageUrl);
-
-  useEffect(() => {
-    matcapTexture.encoding = THREE.sRGBEncoding;
-    matcapTexture.needsUpdate = true;
-
-    material.matcap = matcapTexture;
-    material.needsUpdate = true;
-  }, []);
-
-  const directionalLight = useRef();
-  useHelper(directionalLight, THREE.DirectionalLightHelper, 1);
 
   return (
     <>
       {/* <Perf position="top-left" /> */}
-      {/* <OrbitControls makeDefault /> */}
+      <OrbitControls makeDefault />
 
       <Environment preset="forest" />
 

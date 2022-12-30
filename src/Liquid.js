@@ -15,16 +15,23 @@ export function Model(props) {
   const imageUrl = useSelector((state) => state.imageUrl);
   const texture = new THREE.TextureLoader().load(imageUrl);
 
+  const matcapTexture = new THREE.TextureLoader().load(
+    "7B5254_E9DCC7_B19986_C8AC91-256px.png"
+  );
+
   useEffect(() => {
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
 
-
     material.matcap = texture;
-    // material.map = texture
+
+    materials.liquid.matcap = texture;
+    materials.liquid.map = texture;
   }, [texture, imageUrl]);
+
+  console.log(materials.liquid);
 
   return (
     <group {...props} dispose={null}>
@@ -32,7 +39,7 @@ export function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Liquid_2_object_90.geometry}
-        material={imageUrl ? materials.liquid : material}
+        material={material}
         position={[0.5, -0.2, -0.48]}
         rotation={[0, 0.03, 0]}
         scale={137.9}
