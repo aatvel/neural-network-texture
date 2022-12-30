@@ -741,7 +741,7 @@ export default function Junior(props) {
           rotation={[-3.1, 1.2, 2.2]}
           scale={0.5}
         />
-        <mesh
+        {/* <mesh
           name="Liquid_2_object_90"
           geometry={nodes.Liquid_2_object_90.geometry}
           material={material}
@@ -749,7 +749,7 @@ export default function Junior(props) {
           rotation={[Math.PI / 2, 0, 0]}
           map={texture ? texture : new THREE.Texture()}
           scale={1.4}
-        />
+        /> */}
         <mesh
           name="JuniorJR_3_ram"
           geometry={nodes.JuniorJR_3_ram.geometry}

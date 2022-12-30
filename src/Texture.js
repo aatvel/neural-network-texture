@@ -29,7 +29,7 @@ export default function Texture() {
     <div className="app-main">
       {loading ? (
         <>
-          <h2>Generating.. Please Wait..</h2>
+          <h2 >Generating.. Please Wait..</h2>
           <div className="lds-ripple">
             <div></div>
             <div></div>

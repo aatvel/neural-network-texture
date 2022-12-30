@@ -33,13 +33,14 @@ h2 {
   position: absolute;
   top: 80%;
   left: 37%;
-  color: purple;
+  color: rgb(255, 255, 255);
   z-index: 3;
 }
 
 .app-input {
   height: 45px;
-  text-align:center;
+  text-align: center;
+  padding: 5px;
   border: 1px solid purple;
   border-radius: 20px;
   font-size: 14px;
@@ -63,10 +64,11 @@ h2 {
     width: 100px;
     height: 35px;
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 105%;
     
     border: 1px solid purple;
+    border-radius: 15px;
     background: rgba(128, 0, 128, 0.671);
 
     pointer-events:visible;

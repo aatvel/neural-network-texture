@@ -15,6 +15,7 @@ import * as THREE from "three";
 import { Suspense } from "react";
 import Junior from "./Junior";
 import { Fog } from "three";
+import { Model } from "./Liquid";
 
 const torusGeometry = new THREE.TorusGeometry(1, 0.6, 16, 32);
 const material = new THREE.MeshMatcapMaterial();
@@ -57,16 +58,17 @@ export default function Scene() {
       <Center position={[0, 1.5, 0]}>
         <Suspense>
           <Float
-            rotationIntensity={0.5}
+            rotationIntensity={0.75}
             floatIntensity={(0, 5)}
             floatingRange={[0.2, 0.2]}
           >
             <Junior scale={0.55} rotation={[0, Math.PI / 6, 0]} />
+            <Model scale={0.55} rotation={[0, Math.PI / 6, 0]} />
           </Float>
         </Suspense>
       </Center>
 
-      <mesh position-y={-2} position-z={-5} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh position-y={-3.25} position-z={-5} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
         <MeshReflectorMaterial
           blur={[10, 100]}
