@@ -47,3 +47,10 @@ export function downloadImage(prompt) {
     dispatch({ type: IMAGE_GENERATED, imageUrl: imageResponse.url });
   };
 }
+
+export const getUrlApi = async (body) =>
+  await fetch("http://178.124.214.161:7777/render ", body);
+
+export const getImage = async (url) => await fetch(url);
+
+export const getUrlData = async (body) => await body.text();

@@ -16,6 +16,7 @@
     "@improbable-eng/grpc-web": "^0.15.0",
     "@react-three/drei": "^9.32.3",
     "@react-three/fiber": "^8.8.7",
+    "@react-three/postprocessing": "^2.7.0",
     "cors": "^2.8.5",
     "cors-anywhere": "^0.4.4",
     "dalle-node": "^1.0.8",

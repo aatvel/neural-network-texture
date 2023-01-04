@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { downloadImage } from "./service";
+import { loadImageStart } from "./store/actions";
 
 export default function Texture() {
   const dispatch = useDispatch();
@@ -14,22 +15,22 @@ export default function Texture() {
   );
 
   const handleGenerateImage = () => {
-    setLoading(true);
-    dispatch(downloadImage(prompt));
-    setTimeout(() => {
-      setLoading(false);
-    }, 52000);
+    // setLoading(true);
+    dispatch(loadImageStart(prompt));
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 52000);
   };
 
   useEffect(() => {}, []);
 
-  const imageUrl = useSelector((state) => state.imageUrl);
+  const imageUrl = useSelector((s) => s.imageUrl);
 
   return (
     <div className="app-main">
       {loading ? (
         <>
-          <h2 >Generating.. Please Wait..</h2>
+          <h2>Generating.. Please Wait..</h2>
           <div className="lds-ripple">
             <div></div>
             <div></div>
@@ -37,20 +38,18 @@ export default function Texture() {
         </>
       ) : (
         <>
-     
-            <>
-              <textarea
-                className="app-input"
-                placeholder={placeholder}
-                onChange={(e) => setPrompt(e.target.value)}
-                rows="10"
-                cols="40"
-              />
-              <button className="button-create " onClick={handleGenerateImage}>
-                Generate an Image
-              </button>
-            </>
-          
+          <>
+            <textarea
+              className="app-input"
+              placeholder={placeholder}
+              onChange={(e) => setPrompt(e.target.value)}
+              rows="10"
+              cols="40"
+            />
+            <button className="button-create " onClick={handleGenerateImage}>
+              Generate an Image
+            </button>
+          </>
         </>
       )}
     </div>
