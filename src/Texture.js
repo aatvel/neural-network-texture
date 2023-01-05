@@ -1,30 +1,21 @@
 import "./style.css";
-import * as THREE from "three";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { downloadImage } from "./service";
+
 import { loadImageStart } from "./store/actions";
 
 export default function Texture() {
   const dispatch = useDispatch();
   const [prompt, setPrompt] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const [placeholder, setPlaceholder] = useState(
     "Search Bears with Paint Brushes the Starry Night, painted by Vincent Van Gogh.."
   );
+  const { loading } = useSelector((state) => state.imageUrl);
 
   const handleGenerateImage = () => {
-    // setLoading(true);
     dispatch(loadImageStart(prompt));
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 52000);
   };
-
-  useEffect(() => {}, []);
-
-  const imageUrl = useSelector((s) => s.imageUrl);
 
   return (
     <div className="app-main">

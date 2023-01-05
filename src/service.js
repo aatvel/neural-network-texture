@@ -1,8 +1,7 @@
-import React from "react";
 import { createStore } from "redux";
 import thunk from "redux-thunk";
 import { applyMiddleware } from "redux";
-import { Configuration, OpenAIApi } from "openai";
+
 
 const IMAGE_GENERATED = "IMAGE_GENERATED";
 

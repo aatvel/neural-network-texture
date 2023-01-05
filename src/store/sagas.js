@@ -11,7 +11,6 @@ import {
 import { getImage, getUrlApi, getUrlData } from "../service";
 import {
   IMAGE_GENERATED_START,
-  IMAGE_GENERATED_SUCCESS,
   loadImageSucces,
 } from "./actions";
 
