@@ -11,6 +11,7 @@ export function Liquid(props) {
   const { nodes, materials } = useGLTF("/Untitled 1.glb");
   const material = new THREE.MeshMatcapMaterial();
   const { imageUrl } = useSelector((state) => state.imageUrl);
+  // console.log(imageUrl)
   const texture = new THREE.TextureLoader().load(imageUrl);
 
   useEffect(() => {
