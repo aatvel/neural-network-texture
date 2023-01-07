@@ -12,20 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@dimforge/rapier3d": "^0.10.0",
-    "@grpc/grpc-js": "^1.8.0",
-    "@improbable-eng/grpc-web": "^0.15.0",
     "@react-three/drei": "^9.32.3",
     "@react-three/fiber": "^8.8.7",
     "@react-three/postprocessing": "^2.7.0",
-    "cors": "^2.8.5",
-    "cors-anywhere": "^0.4.4",
-    "dalle-node": "^1.0.8",
     "google-protobuf": "^3.21.2",
-    "grpc": "^1.24.11",
-    "grpc-web": "^1.4.2",
-    "http-proxy-middleware": "^2.0.6",
-    "node-fetch": "^3.3.0",
-    "openai": "^3.1.0",
     "postprocessing": "^6.29.3",
     "r3f-perf": "^6.5.0",
     "react": "^18.2.0",
@@ -35,7 +25,6 @@
     "redux": "^4.2.0",
     "redux-saga": "^1.2.2",
     "redux-thunk": "^2.4.2",
-    "request": "^2.88.2",
     "three": "^0.145.0"
   },
   "browserslist": {

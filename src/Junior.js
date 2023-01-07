@@ -7,8 +7,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
 import {
   Bloom,
-  EffectComposer,
-  SelectiveBloom,
+  EffectComposer
 } from "@react-three/postprocessing";
 import { BlurPass, Resizer, KernelSize } from "postprocessing";
 
