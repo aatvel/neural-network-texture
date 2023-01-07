@@ -26,8 +26,8 @@ export default function Scene() {
     
         <directionalLight position={[1.9, 0, - 1.3]} color={'magenta'} />
         <directionalLight position={[-2.9, 0, - 2]} color={'orange'}  />
-        {/* <directionalLight position={[0, 0, 2]} color={'#fffff0'} intensity={0.3} />
-        <directionalLight position={[0, 2, 1.2]} color={'#fffaf0'} intensity={0.3} /> */}
+        <directionalLight position={[0, 0, 2]} color={'#fffff0'} intensity={0.3} />
+        <directionalLight position={[0, 2, 1.2]} color={'#fffaf0'} intensity={0.3} />
         <Center position={[0, 1.5, 0]}>
           <Suspense>
             <Junior scale={0.55} rotation={[0, Math.PI / 6, 0]} />

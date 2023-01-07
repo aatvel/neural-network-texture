@@ -42,18 +42,7 @@ export default function Junior(props) {
 
       <group ref={group} {...props} dispose={null}>
         <group name="Scene">
-          <directionalLight
-            position={[0, 0, 2]}
-            color={"#fffff0"}
-            intensity={0.3}
-            ref={lightRef2}
-          />
-          <directionalLight
-            position={[0, 2, 1.2]}
-            color={"#fffaf0"}
-            intensity={0.3}
-            ref={lightRef1}
-          />
+
           <mesh
             name="AS_ROMB_1v_&_M1__s07115_out_object_0"
             geometry={nodes["AS_ROMB_1v_&_M1__s07115_out_object_0"].geometry}
