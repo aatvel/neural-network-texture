@@ -8,7 +8,7 @@ import Floor from "./Floor";
 import { Model } from "./Model";
 import { Head } from "./Head";
 
-THREE.ColorManagement.legacyMode = false
+// THREE.ColorManagement.legacyMode = false
 
 export default function Scene() {
 

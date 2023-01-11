@@ -33,7 +33,7 @@ export function Head(props) {
 
  
 
-  const material = new THREE.MeshPhysicalMaterial({reflectivity: 0.001, metalness: 0.1,  envMapIntensity: 0.5, color: color});
+  const material = new THREE.MeshPhysicalMaterial({reflectivity: 0.01, metalness: 0.05,  envMapIntensity: 0.9, color: color});
   const { imageUrl } = useSelector((state) => state.imageUrl);
   console.log(imageUrl)
   const texture = new THREE.TextureLoader().load(imageUrl);
@@ -46,9 +46,9 @@ export function Head(props) {
     });
 
     material.map = texture
-    material.metalnessMap = texture
     material.roughnessMap = texture    
     texture.repeat.set( x ,y )
+    texture.encoding = THREE.sRGBEncoding
     texture.wrapS =  THREE.MirroredRepeatWrapping
     texture.wrapT = THREE.MirroredRepeatWrapping
 
