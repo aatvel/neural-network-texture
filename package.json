@@ -16,6 +16,7 @@
     "@react-three/fiber": "^8.8.7",
     "@react-three/postprocessing": "^2.7.0",
     "google-protobuf": "^3.21.2",
+    "leva": "^0.9.34",
     "postprocessing": "^6.29.3",
     "r3f-perf": "^6.5.0",
     "react": "^18.2.0",

@@ -6,6 +6,8 @@ import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useSelector } from "react-redux";
+import { useControls } from "leva";
+
 
 
 export function Head(props) {
@@ -13,22 +15,45 @@ export function Head(props) {
   const { nodes, materials, animations } = useGLTF("/WOBBLEBUG_2.glb");
   const { actions } = useAnimations(animations, group);
 
-  const material = new THREE.MeshMatcapMaterial();
+  const {x,y, color} = useControls ({
+    x: {
+      value: 6.8,
+      min: 0.5,
+      max: 15,
+      step: 0.5
+    },
+    y: {
+      value: 6.8,
+      min: 0.5,
+      max: 15,
+      step: 0.5
+    },
+    color: '#ffffff'
+  })
+
+ 
+
+  const material = new THREE.MeshPhysicalMaterial({reflectivity: 0.001, metalness: 0.1, roughness: 0.8, envMapIntensity: 0.1, color: color});
   const { imageUrl } = useSelector((state) => state.imageUrl);
   console.log(imageUrl)
   const texture = new THREE.TextureLoader().load(imageUrl);
+
+
 
   useEffect(() => {
     Object.keys(actions).forEach((key) => {
       actions[key].play();
     });
 
-    material.map = texture    
-    texture.repeat.set( 6.8,6.8 )
+    material.map = texture
+    material.metalnessMap = texture
+    material.roughnessMap = texture    
+    texture.repeat.set( x ,y )
     texture.wrapS =  THREE.MirroredRepeatWrapping
     texture.wrapT = THREE.MirroredRepeatWrapping
 
-  }, [imageUrl]);
+  }, [imageUrl, x, y]);
+
 
   return (
     <group ref={group} {...props} dispose={null}>

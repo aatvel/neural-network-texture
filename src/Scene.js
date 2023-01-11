@@ -23,7 +23,7 @@ export default function Scene() {
         }}
       >
         <OrbitControls makeDefault />
-        <Environment preset="forest" />
+        <Environment preset="forest" blur={0.8} />
 
     
         <directionalLight position={[1.9, 0, - 1.3]} color={'magenta'} />

@@ -25,6 +25,7 @@ function* onTakeUrlAsync(payload) {
     const data = yield call(getUrlData, response);
     const urlDownload = "http://178.124.214.161:7777/download/";
     yield delay(50000);
+    
     const imageResponse = yield call(getImage, `${urlDownload}${data}`);
     yield put(loadImageSucces(imageResponse.url));
   }
