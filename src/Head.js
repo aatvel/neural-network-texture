@@ -28,12 +28,12 @@ export function Head(props) {
       max: 15,
       step: 0.5
     },
-    color: '#ffffff'
+    color: '#ffffff',
   })
 
  
 
-  const material = new THREE.MeshPhysicalMaterial({reflectivity: 0.001, metalness: 0.1, roughness: 0.8, envMapIntensity: 0.1, color: color});
+  const material = new THREE.MeshPhysicalMaterial({reflectivity: 0.001, metalness: 0.1,  envMapIntensity: 0.5, color: color});
   const { imageUrl } = useSelector((state) => state.imageUrl);
   console.log(imageUrl)
   const texture = new THREE.TextureLoader().load(imageUrl);
@@ -52,7 +52,7 @@ export function Head(props) {
     texture.wrapS =  THREE.MirroredRepeatWrapping
     texture.wrapT = THREE.MirroredRepeatWrapping
 
-  }, [imageUrl, x, y]);
+  }, [imageUrl, x, y, color]);
 
 
   return (
